@@ -1,0 +1,21 @@
+Library/
+Assets/models/
+Assets/UniRx/
+Assets/Standard Assets/
+Assets/BulletXNA.meta
+Assets/BulletXNA/
+Assets/Standard Assets.meta
+Assets/UniRx.meta
+Assets/UnityVS/
+Assets/Plugins/
+*.meta
+Temp/
+ProjectSettings/
+*.csproj
+bin/
+Assets/MMD4Mecanim/
+obj/
+*.suo
+Assets/CombineMeshes/
+Assets/Editor/
+*.sln
