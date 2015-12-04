@@ -9,8 +9,11 @@ public class CharacterControl : MonoBehaviour
 {
     private CharacterAction _characterAction;
     private Transform _mainCam;
-    [SerializeField]
     private bool isJump;
+    private Vector3 camForrrwardVector3;    //カメラの前方方向ベクトル
+    private Vector3 moveVector3;    //移動ベクトル
+    private float inputHorizontal;
+    private float inputVertical;
 
 	//一番最初に１度だけ呼ばれる
 	void Start () {
@@ -23,11 +26,12 @@ public class CharacterControl : MonoBehaviour
 	
 	//1フレームごとに呼ばれる
 	void Update () {
-        Vector3 camForrrwardVector3;  //カメラの前方方向ベクトル
-	    Vector3 moveVector3;    //移動ベクトル
-	    isJump = Input.GetButtonDown("Jump");
-	    var inputHorizontal = Input.GetAxis("Horizontal");
-	    var inputVertical = Input.GetAxis("Vertical");
+	    if (!isJump)
+	    {
+            isJump = Input.GetButtonDown("Jump");
+	    }
+	    inputHorizontal = Input.GetAxis("Horizontal");
+	    inputVertical = Input.GetAxis("Vertical");
 
 	    if (_mainCam != null)
 	    {
@@ -43,6 +47,7 @@ public class CharacterControl : MonoBehaviour
 	    {
 	        moveVector3 *= 0.5f;
 	    }
-
+        _characterAction.Move(moveVector3, isJump);
+	    isJump = false;
 	}
 }
