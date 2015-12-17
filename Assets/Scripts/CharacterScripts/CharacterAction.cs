@@ -100,6 +100,11 @@ public class CharacterAction : MonoBehaviour
         }
     }
 
+    public void Attack(bool isAttackTrigger)
+    {
+        charAnimator.SetBool("isAttackTrigger", isAttackTrigger);
+    }
+
     /// <summary>
     /// 落下時のあれ？（サンプルから引っ張ってきたからわからん）
     /// </summary>

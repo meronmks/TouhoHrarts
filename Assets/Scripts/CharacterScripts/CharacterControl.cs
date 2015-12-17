@@ -26,10 +26,6 @@ public class CharacterControl : MonoBehaviour
 	
 	//1フレームごとに呼ばれる
 	void Update () {
-	    if (!isJump)
-	    {
-            isJump = Input.GetButtonDown("Jump");
-	    }
 	    inputHorizontal = Input.GetAxis("Horizontal");
 	    inputVertical = Input.GetAxis("Vertical");
 
@@ -47,7 +43,7 @@ public class CharacterControl : MonoBehaviour
 	    {
 	        moveVector3 *= 0.5f;
 	    }
-        _characterAction.Move(moveVector3, isJump);
-	    isJump = false;
+        _characterAction.Move(moveVector3, Input.GetButtonDown("Jump"));
+	    _characterAction.Attack(Input.GetKeyDown("Fire1"));
 	}
 }
