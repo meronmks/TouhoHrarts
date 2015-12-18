@@ -44,6 +44,6 @@ public class CharacterControl : MonoBehaviour
 	        moveVector3 *= 0.5f;
 	    }
         _characterAction.Move(moveVector3, Input.GetButtonDown("Jump"));
-	    _characterAction.Attack(Input.GetKeyDown("Fire1"));
+        _characterAction.Attack(Input.GetButtonDown("Fire1"));
 	}
 }
